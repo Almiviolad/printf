@@ -1,0 +1,79 @@
+.TH _PRINTF, 1 2022-10-22
+.SH NAME
+_printf
+.SH SYNOPSIS
+#include "main.h"
+int _printf(const char *format, ...)
+.SH DESCRIPTION
+The _printf function produces output to stdout following a format. it write the output under the control of a
+       format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of stdarg(3)) are converted for output.
+       
+.SS FORMAT SPECIFIERS:
+.RS
+
+A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
+
+.IP d,i
+Decimal signed integer. The int argument is converted to signed decimal notation. 
+
+.IP c
+Character. The int argument is converted to an unsigned char, and the resulting character is written.
+
+.IP s
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0').
+
+.IP o,u,x,X
+The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation. The letters abcdef are used for x conversions; the letters ABCDEF are used for X conversions.
+
+.IP p
+The void * pointer argument is printed in hexadecimal (as if by %#x or %#lx).
+
+.I
+.SS CUSTOM CONVERSION SPECIFIERS
+.RS
+
+.IP b
+Decimal signed integer. The int argument is converted to binary notation.
+
+.IP r
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but n\ot including) a terminating null byte ('\0') in reverse order.
+
+
+.IP R
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but n\
+\ot including) a terminating null byte ('\0') in ROT13 format.
+
+
+.SH RETURN VALUE
+.RS
+Upon successful return, these functions return the number of characters printed 
+
+.SH EXAMPLES:
+.RS
+.SS --------------
+.I
+.SS Character[%c]:
+.RS
+.SS --------------
+.SS Input         _printf("I am a character [%c]", 'C');
+.SS Output	   I am a character [C]
+.SS --------------
+.I
+.SS Literal String:
+.RS
+.SS --------------
+.SS Input	 _printf("I am asentence with no converaion specifier")
+.SS Output	  I am asentence with no converaio\
+n specifier
+.SS --------------
+.I
+.SS Integers[%d]
+.RS
+.SS --------------
+.SS Input	 _printf("I am an integwr or number [%d]", 17)
+.SS Output	  I am an integwr or number [%d]",\
+ 17)
+.SS --------------
+.RE
+ .SH AUTHORS
+Aloh Michael v. and Ojeolowobaye Gracious
