@@ -40,7 +40,6 @@ int print_hex_big(va_list l, flag_type *f)
 	count += _puts(str);
 	return (count);
 }
-
 /**
  * print_binary - prints a number in base 2
  * @l: va_list arguments from _printf

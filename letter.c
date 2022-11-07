@@ -2,7 +2,7 @@
 /**
  * print_string - prints all chars in a string
  * @l: va_list arguments from _printf
- * @f: pointer to the struct flags 
+ * @f: pointer to the struct flags
  * Return: number of char printed
  */
 int print_string(va_list l, flag_type *f)
